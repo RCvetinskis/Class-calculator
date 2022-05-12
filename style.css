@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap');
+
+*{
+
+    padding: 0;
+    margin: 0;
+
+}
+body{
+    background: linear-gradient(to right, cyan, yellowgreen);
+    font-family: 'Lato', sans-serif;
+}
+
+.calculator-grid {
+    margin: 70px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4,100px);
+  
+
+}
+.calculator-grid button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.685);
+    border: 1px solid white;
+    padding: 30px;
+    font-size: 30px;
+}
+.calculator-grid button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.904);
+}
+.output{
+    height: 100px;
+    grid-column: span 4;
+    background-color: rgba(0, 0, 0, 0.74);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px;
+}
+
+.output .previous-opperand{
+    color: rgba(255, 255, 255, 0.685);
+    font-size: 1.3em;
+}
+.output .current-opperand{
+    font-size: 2.5em;
+}
+
+.span-two {
+ grid-column: span 2;
+}
