@@ -45,9 +45,26 @@ class Calculator {
       }
       this.currentOpperand += number
   }
+  getDisplayNumber(number){
+    var stringNumber = number.toString()
+    var integerDigits = parseFloat(stringNumber.split(".")[0])
+    var decimalDigits = stringNumber.split(".")[1]
+   
+    if(isNaN(integerDigits)){
+        integerDigits =""
+    }else {
+        integerDigits = integerDigits.toLocaleString("lt")
+    }
+    if(decimalDigits != null){
+        return `${integerDigits}.${decimalDigits}`
+    }
+    return integerDigits
+  }
 
   updateDisplay(){
-      this.currentTextElement.innerText = this.currentOpperand
+      if(this.currentOpperand.length > 32) this.currentOpperand =""
+     
+      this.currentTextElement.innerText =  this.getDisplayNumber(this.currentOpperand)
       if(this.operation !== undefined){
         this.previousTextElement.innerText = 
         `${this.previousOpperand} ${this.operation}`
